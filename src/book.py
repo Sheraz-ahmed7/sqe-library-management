@@ -1,10 +1,10 @@
 class Book:
-    def __init__(self, title: str, author: str, isbn: str, copies: int):
+    def __init__(self, title: str, author: str, book_id: str, copies: int):
         if copies < 0:
             raise ValueError("Copies cannot be negative.")
         self.title = title
         self.author = author
-        self.isbn = isbn
+        self.book_id = book_id
         self.copies = copies
 
     def borrow_book(self) -> None:
