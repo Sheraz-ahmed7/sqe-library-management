@@ -38,3 +38,13 @@ def test_duplicate_isbn_is_rejected():
 
     with pytest.raises(ValueError, match="Duplicate ISBN is not allowed"):
         library.add_book(book2)
+
+
+def test_negative_copies_are_rejected():
+    with pytest.raises(ValueError, match="Copies cannot be negative"):
+        Book(
+            "Clean Code",
+            "Robert Martin",
+            "9780132350884",
+            -2
+        )
