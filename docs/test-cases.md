@@ -21,3 +21,20 @@ functional requirements.
 | TC-011 | Fine calculation for mid-range overdue period | REQ-7 | Fine calculation is available | 1. Calculate the fine for 5 overdue days. | The system calculates the fine according to the defined LibraryHub fine rate for 5 overdue days. | Medium | Positive / Functional |
 | TC-012 | Fine calculation at overdue-tier boundary | REQ-7 | Fine calculation uses defined overdue tiers | 1. Calculate the fine at the first overdue-tier boundary, such as 7 overdue days. | The system applies the correct fine rate for the boundary value and does not incorrectly use the previous tier. | High | Boundary / Functional |
 | TC-013 | Search book by title | REQ-8 | Library contains a book titled `Clean Code` | 1. Search the library for `Clean Code`. | The matching book is returned in the search results. | Medium | Positive / Functional |
+
+## Test Execution Results
+
+| Test ID | Status | Actual Result / Notes | Defect Reference |
+|---|---|---|---|
+| TC-001 | Not Run | Pending execution | N/A |
+| TC-002 | Not Run | Pending execution | N/A |
+| TC-003 | Not Run | Pending execution | N/A |
+| TC-004 | Not Run | Pending execution | N/A |
+| TC-005 | Not Run | Pending execution | N/A |
+| TC-006 | Not Run | Pending execution | N/A |
+| TC-007 | Not Run | Pending execution | N/A |
+| TC-008 | Not Run | Pending execution | N/A |
+| TC-009 | Not Run | Pending execution | N/A |
+| TC-010 | Not Run | Pending execution | N/A |
+| TC-011 | Not Run | Pending execution | N/A |
+| TC-012 | Not Run | Pending execution | N/A |
