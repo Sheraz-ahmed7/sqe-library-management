@@ -19,3 +19,10 @@ def test_valid_isbn(isbn):
 ])
 def test_invalid_isbn(isbn):
     assert validate_isbn(isbn) is False
+
+def validate_isbn(isbn):
+    return (
+        isinstance(isbn, str)
+        and len(isbn) == 13
+        and isbn.isdigit()
+    )
