@@ -20,9 +20,15 @@ def test_valid_isbn(isbn):
 def test_invalid_isbn(isbn):
     assert validate_isbn(isbn) is False
 
-def validate_isbn(isbn):
-    return (
-        isinstance(isbn, str)
-        and len(isbn) == 13
-        and isbn.isdigit()
-    )
+
+@pytest.mark.parametrize("length, expected", [
+    (11, False),
+    (12, False),
+    (13, True),
+    (14, False),
+    (15, False),
+])
+def test_isbn_length_boundaries(length, expected):
+    isbn = "1" * length
+
+    assert validate_isbn(isbn) is expected

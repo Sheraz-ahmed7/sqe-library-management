@@ -50,3 +50,21 @@ def test_member_with_five_books_cannot_borrow_sixth():
 
     with pytest.raises(ValueError):
         library.borrow_book("member1", "ISBN001")
+
+
+@pytest.mark.parametrize("initial_loans, should_succeed", [
+    (4, True),
+    (5, False),
+    (6, False),
+])
+def test_borrow_limit_boundaries(initial_loans, should_succeed):
+    library = create_library()
+
+    library.member_loans["member1"] = initial_loans
+
+    if should_succeed:
+        library.borrow_book("member1", "ISBN001")
+        assert library.member_loans["member1"] == 5
+    else:
+        with pytest.raises(ValueError):
+            library.borrow_book("member1", "ISBN001")
