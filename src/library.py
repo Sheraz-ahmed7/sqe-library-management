@@ -51,10 +51,17 @@ class Library:
         self.member_loans[member_id] = current_loans + 1
 
 
+
 def borrow_percentile(member: str, library: Library) -> float:
     """Calculate a member's borrowing percentile."""
     loans = library.member_loans
+
+    if not loans:
+        return 0.0
+
     counts = list(loans.values())
     member_count = loans.get(member, 0)
+
     rank = counts.index(member_count)
+
     return rank / len(counts) * 100

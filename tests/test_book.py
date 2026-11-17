@@ -48,3 +48,16 @@ def test_negative_copies_are_rejected():
             "9780132350884",
             -2
         )
+
+
+def test_borrow_book_when_one_copy_available():
+    book = Book(
+        "Python Programming",
+        "John Smith",
+        "9781234567890",
+        1
+    )
+
+    book.borrow_book()
+
+    assert book.copies == 0
